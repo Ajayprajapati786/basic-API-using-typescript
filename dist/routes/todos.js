@@ -10,7 +10,7 @@ router.post('/todo', (req, res, next) => {
     const body = req.body;
     const newTodo = {
         id: new Date().toISOString(),
-        text: req.body.texts,
+        text: body.text,
     };
     todos.push(newTodo);
     res.status(201).json({ message: 'Added Todo', todo: newTodo, todos: todos });
